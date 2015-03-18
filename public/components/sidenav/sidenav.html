@@ -20,13 +20,13 @@
 		<!--<md-list data-ng-if="menu.shouldRender(authentication.user);">-->
 		<md-list>
 			<md-item data-ng-repeat="item in sidenav.menu.items">
-				<a ui-sref='{{item.link}}'>
-					<md-button class='md-primary'>
-						<h3>{{item.title}}</h3>
-					</md-button>
-				</a>
+				<md-item-content>
+					<a ui-sref='{{item.link}}'>
+						<md-button class='md-primary'>
+							<h3>{{item.title}}</h3>
+						</md-button>
+					</a>
 
-				<md-divider ng-if="!$last"></md-divider>
 				<!--<a ng-switch-when="dropdown" class="dropdown-toggle" dropdown-toggle>-->
 					<!--<span data-ng-bind="item(title)"></span>-->
 					<!--<b class="caret"></b>-->
@@ -41,6 +41,8 @@
 					<!--</li>-->
 				<!--</ul>-->
 				<!--<a href="/#!/{{item.link}}" data-ng-bind="item.title"></a>-->
+				</md-item-content>
+				<md-divider ng-if="!$last"></md-divider>
 			</md-item>
 		</md-list>
 
