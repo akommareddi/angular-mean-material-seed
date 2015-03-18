@@ -1,0 +1,67 @@
+<section class="row" data-ng-controller="AuthenticationController as auth">
+	<md-content layout="column" layout-align="space-around center">
+		<md-card>
+			<md-card-content id="login-box">
+				<h2>Sign in</h2>
+				<div data-ng-show="error" class="text-center tc-red-300">
+					<strong data-ng-bind="error"></strong>
+				</div>
+
+				<form data-ng-submit="auth.signin()" autocomplete="off">
+					<md-input-container>
+						<label>Username</label>
+						<input id="username" name="username" required data-ng-model="auth.credentials.username">
+						<div ng-messages="::auth.projectForm.description.$error">
+							<div ng-message="required">Username is required</div>
+						</div>
+					</md-input-container>
+					<md-input-container>
+						<label>Password</label>
+						<input type="password" id="password" name="password" class="form-control" required data-ng-model="auth.credentials.password">
+						<div ng-messages="projectForm.description.$error">
+							<div ng-message="required">Password is required</div>
+						</div>
+					</md-input-container>
+					<div layout="column" layout-align="space-between center">
+						<div class="login-action">
+							<md-button class="md-raised md-primary" type="submit" lx-ripple>Sign in</md-button>
+						</div>
+						<div class="login-action">
+							<label>Don't have an account?</label>
+							<a href="/#!/signup">Sign up</a>
+						</div>
+						<div class="login-action">
+							<a href="/#!/password/forgot">Forgot your password?</a>
+						</div>
+					</div>
+				</form>
+			</md-card-content>
+		</md-card>
+
+		<md-card>
+			<md-card-content id="login-box">
+				<div layout="row" layout-align="space-around center">
+					<md-button class="md-fab md-primary alt" aria-label="Use Facebook" ng-href="/auth/facebook">
+						<i class="mdi fa-lg mdi-facebook"></i>
+					</md-button>
+					<md-button class="md-fab md-primary alt" aria-label="Use Github" ng-href="/auth/github">
+						<i class="mdi fa-lg mdi-github-circle"></i>
+					</md-button>
+					<md-button class="md-fab md-primary alt" aria-label="Use Twitter" ng-href="/auth/twitter">
+						<i class="mdi fa-lg mdi-twitter"></i>
+					</md-button>
+					<md-button class="md-fab md-primary alt" aria-label="Use LinkedIn" ng-href="/auth/linkedin">
+						<i class="mdi fa-lg mdi-linkedin"></i>
+					</md-button>
+					<md-button class="md-fab md-primary alt" aria-label="Use Google" ng-href="/auth/google">
+						<i class="mdi fa-lg mdi-google"></i>
+					</md-button>
+				</div>
+			</md-card-content>
+		</md-card>
+	</md-content>
+
+</section>
+
+
+

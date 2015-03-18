@@ -1,0 +1,28 @@
+@media (min-width: 992px) {
+	.nav-users {
+		position: fixed;
+	}
+}
+.remove-account-container {
+	display: inline-block;
+	position: relative;
+}
+.btn-remove-account {
+	top: 10px;
+	right: 10px;
+	position: absolute;
+}
+
+/*md-whiteframe {*/
+	/*background: #fff;*/
+	/*margin: 20px;*/
+	/*padding: 20px;*/
+/*}*/
+
+md-card-content#login-box {
+	min-width: 500px;
+}
+
+div.login-action {
+	margin-bottom: 10px;
+}

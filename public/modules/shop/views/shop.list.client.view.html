@@ -1,0 +1,27 @@
+<div class="shop-container" layout layout-padding layout-align="center center">
+	<md-whiteframe layout='column' layout-padding flex='80' class='md-whiteframe-z2'>
+		<md-list>
+			<md-item data-ng-repeat="product in shop.products">
+
+				<md-whiteframe layout="column" layout-margin layout-fill layout-padding flex="60" class="md-whiteframe">
+					<md-toolbar layout layout-align="center center" style="margin-bottom:20px;">
+						<h2>{{product.title}}</h2>
+					</md-toolbar>
+					<div layout="row" layout-align="center center">
+						<p flex="80">{{product.description}}</p>
+					</div>
+					<div layout="row" layout-align="end" style="position:relative">
+						<!--<a ui-sref='shop.edit({productIndex:$index})' style="position:relative;bottom:-30px;right:-30px;">-->
+						<!--<a href="#!/shop/list/{{$index}}" style="position:relative;bottom:-30px;right:-30px;">-->
+						<a href="#!/shopList/{{$index}}" style="position:relative;bottom:10px;right:10px;">
+							<md-button class="md-primary md-fab md-raised" aria-label="home"><i
+									class="mdi mdi-pencil"></i></md-button>
+						</a>
+					</div>
+				</md-whiteframe>
+
+				<md-divider ng-if="!$last"></md-divider>
+			</md-item>
+		</md-list>
+	</md-whiteframe>
+</div>
