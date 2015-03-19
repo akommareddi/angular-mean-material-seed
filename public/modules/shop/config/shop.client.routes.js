@@ -26,7 +26,6 @@ angular.module('shop').config(['$stateProvider',
 		state('cubes', {
 			url: '/cubes',
 			templateUrl: 'modules/shop/views/cubes.client.view.html'
-		})
-
+		});
 	}
 ]);

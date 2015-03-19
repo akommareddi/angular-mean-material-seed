@@ -10,6 +10,7 @@ angular.module('users').controller('PasswordController',
 		// Submit forgotten password account id
 		this.askForPasswordReset = function() {
 			this.success = this.error = null;
+			var self = this;
 
 			$http.post('/auth/forgot', this.credentials).success(function(response) {
 				var self = this;

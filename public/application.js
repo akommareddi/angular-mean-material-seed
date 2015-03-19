@@ -41,6 +41,9 @@ angular.module(ApplicationConfiguration.applicationModuleName)
 				templateUrl: 'components/sheet/sheet.html'
 			});
 		};
+
+// Uncomment this to enable ui-router debugging
+/*
 		$rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
 			console.log("$stateChangeStart --- event, toState, toParams, fromState, fromParams");
 			console.log(arguments);
@@ -65,6 +68,7 @@ angular.module(ApplicationConfiguration.applicationModuleName)
 			console.log("$stateNotFound --- event, unfoundState, fromState, fromParams");
 			console.log(arguments);
 		});
+*/
 	});
 
 angular.element(document).ready(function() {
