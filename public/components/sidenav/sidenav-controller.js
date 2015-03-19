@@ -17,6 +17,7 @@
 			  };
 
 			  this.selectItem = function(item) {
+				  console.log('selecting '+item);
 				  this.selected = item;
 			  };
 
