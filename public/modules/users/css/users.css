@@ -13,16 +13,10 @@
 	position: absolute;
 }
 
-/*md-whiteframe {*/
-	/*background: #fff;*/
-	/*margin: 20px;*/
-	/*padding: 20px;*/
-/*}*/
-
-md-card-content#login-box {
+md-card-content.auth-box {
 	min-width: 500px;
 }
 
-div.login-action {
+div.auth-action {
 	margin-bottom: 10px;
 }

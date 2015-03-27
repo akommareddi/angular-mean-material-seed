@@ -25,6 +25,7 @@ angular.module('users').controller('AuthenticationController',
 			$http.post('/auth/signin', this.credentials).success(function(response) {
 				// If successful we assign the response to the global user model
 				self.authentication.user = response;
+				console.log(response);
 
 				// And redirect to the index page
 				$state.go('home');

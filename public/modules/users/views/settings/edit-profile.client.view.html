@@ -2,12 +2,12 @@
 
 	<md-content layout="column" layout-align="space-around center">
 		<md-card>
-			<md-card-content id="login-box">
+			<md-card-content class="auth-box">
 				<h2>My Profile</h2>
 				<div data-ng-show="success" class="text-center tc-green-300">
 					<strong data-ng-bind="success"></strong>
 				</div>
-				<div data-ng-show="error" class="text-center tc-red-300">
+				<div data-ng-show="error" class="text-center md-warn">
 					<strong data-ng-bind="error"></strong>
 				</div>
 
@@ -41,7 +41,7 @@
 						</div>
 					</md-input-container>
 					<div layout="column" layout-align="space-between center">
-						<div class="login-action">
+						<div class="auth-action">
 							<md-button class="md-primary md-raised" type="submit" lx-ripple>Save</md-button>
 						</div>
 					</div>

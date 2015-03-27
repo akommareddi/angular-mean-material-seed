@@ -1,36 +1,36 @@
 <section class="row" data-ng-controller="AuthenticationController as auth">
 	<md-content layout="column" layout-align="space-around center">
 		<md-card>
-			<md-card-content id="login-box">
+			<md-card-content class="auth-box">
 				<h2>Sign in</h2>
-				<div data-ng-show="error" class="text-center tc-red-300">
-					<strong data-ng-bind="error"></strong>
-				</div>
+				<rs-message type="warn" data-ng-show="auth.error">
+					<strong data-ng-bind="auth.error"></strong>
+				</rs-message>
 
-				<form data-ng-submit="auth.signin()" autocomplete="off">
-					<md-input-container>
+				<form data-ng-submit="auth.signin()" autocomplete="off" name="signin_form">
+					<md-input-container md-is-error="false">
 						<label>Username</label>
 						<input id="username" name="username" required data-ng-model="auth.credentials.username">
-						<div ng-messages="::auth.projectForm.description.$error">
-							<div ng-message="required">Username is required</div>
+						<div ng-messages='signin_form.username.$error.required' ng-if='signin_form.username.$dirty && signin_form.username.$error.required'>
+							<div ng-message='required'>Username is required</div>
 						</div>
 					</md-input-container>
-					<md-input-container>
+					<md-input-container md-is-error="false">
 						<label>Password</label>
 						<input type="password" id="password" name="password" class="form-control" required data-ng-model="auth.credentials.password">
-						<div ng-messages="projectForm.description.$error">
+						<div ng-messages='signin_form.password.$error.required' ng-if='signin_form.password.$dirty && signin_form.password.$error.required'>
 							<div ng-message="required">Password is required</div>
 						</div>
 					</md-input-container>
 					<div layout="column" layout-align="space-between center">
-						<div class="login-action">
+						<div class="auth-action">
 							<md-button class="md-raised md-primary" type="submit" lx-ripple>Sign in</md-button>
 						</div>
-						<div class="login-action">
+						<div class="auth-action">
 							<label>Don't have an account?</label>
 							<a href="/#!/signup">Sign up</a>
 						</div>
-						<div class="login-action">
+						<div class="auth-action">
 							<a href="/#!/password/forgot">Forgot your password?</a>
 						</div>
 					</div>
@@ -39,7 +39,7 @@
 		</md-card>
 
 		<md-card>
-			<md-card-content id="login-box">
+			<md-card-content class="auth-box">
 				<div layout="row" layout-align="space-around center">
 					<md-button class="md-fab md-primary alt" aria-label="Use Facebook" ng-href="/auth/facebook">
 						<i class="mdi fa-lg mdi-facebook"></i>

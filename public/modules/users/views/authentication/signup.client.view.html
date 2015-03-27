@@ -1,54 +1,59 @@
-<section class="row" data-ng-controller="AuthenticationController">
+<section class="row" data-ng-controller="AuthenticationController as auth">
 
 	<md-content layout="column" layout-align="space-around center">
 		<md-card>
-			<md-card-content id="login-box">
+			<md-card-content class="auth-box">
 				<h2>Sign up</h2>
-				<div data-ng-show="error" class="text-center tc-red-300">
-					<strong data-ng-bind="error"></strong>
-				</div>
+				<rs-message type="warn" data-ng-show="auth.error">
+					<strong data-ng-bind="auth.error"></strong>
+				</rs-message>
 
-				<form data-ng-submit="signup()" autocomplete="off">
-					<md-input-container>
+				<form data-ng-submit="auth.signup()" autocomplete="off" name="signup_form">
+					<md-input-container md-is-error="false">
 						<label>First Name</label>
-						<input id="firstName" name="firstName" required data-ng-model="credentials.firstName">
-						<div ng-messages="projectForm.description.$error">
-							<div ng-message="required">First name is required</div>
+						<input id="firstName" name="firstName" required data-ng-model="auth.credentials.firstName">
+						<div ng-messages='signup_form.firstName.$error.required'
+							 ng-if='signup_form.firstName.$dirty && signup_form.firstName.$error.required'>
+							<div ng-message='required'>First name is required</div>
 						</div>
 					</md-input-container>
-					<md-input-container>
+					<md-input-container md-is-error="false">
 						<label>Last Name</label>
-						<input id="lastName" name="lastName" required data-ng-model="credentials.lastName">
-						<div ng-messages="projectForm.description.$error">
-							<div ng-message="required">Last name is required</div>
+						<input id="lastName" name="lastName" required data-ng-model="auth.credentials.lastName">
+						<div ng-messages='signup_form.lastName.$error.required'
+							 ng-if='signup_form.lastName.$dirty && signup_form.lastName.$error.required'>
+							<div ng-message='required'>Last name is required</div>
 						</div>
 					</md-input-container>
-					<md-input-container>
+					<md-input-container md-is-error="false">
 						<label>E-mail</label>
-						<input id="email" name="email" required data-ng-model="credentials.email">
-						<div ng-messages="projectForm.description.$error">
-							<div ng-message="required">E-mail is required</div>
+						<input id="email" name="email" required data-ng-model="auth.credentials.email">
+						<div ng-messages='signup_form.email.$error.required'
+							 ng-if='signup_form.email.$dirty && signup_form.email.$error.required'>
+							<div ng-message='required'>E-mail is required</div>
 						</div>
 					</md-input-container>
-					<md-input-container>
+					<md-input-container md-is-error="false">
 						<label>Username</label>
-						<input id="username" name="username" required data-ng-model="credentials.username">
-						<div ng-messages="projectForm.description.$error">
-							<div ng-message="required">Username is required</div>
+						<input id="username" name="username" required data-ng-model="auth.credentials.username">
+						<div ng-messages='signup_form.username.$error.required'
+							 ng-if='signup_form.username.$dirty && signup_form.username.$error.required'>
+							<div ng-message='required'>Username is required</div>
 						</div>
 					</md-input-container>
-					<md-input-container>
+					<md-input-container md-is-error="false">
 						<label>Password</label>
-						<input type="password" id="password" name="password" class="form-control" required data-ng-model="credentials.password">
-						<div ng-messages="projectForm.description.$error">
-							<div ng-message="required">Password is required</div>
+						<input type="password" id="password" name="password" required data-ng-model="auth.credentials.password">
+						<div ng-messages='signup_form.password.$error.required'
+							 ng-if='signup_form.password.$dirty && signup_form.password.$error.required'>
+							<div ng-message='required'>Passport is required</div>
 						</div>
 					</md-input-container>
 					<div layout="column" layout-align="space-between center">
-						<div class="login-action">
+						<div class="auth-action">
 							<md-button class="md-primary md-raised" type="submit" lx-ripple>Sign up</md-button>
 						</div>
-						<div class="login-action">
+						<div class="auth-action">
 							<label>Have an account?</label>
 							<a href="/#!/signin">Sign in</a>
 						</div>
