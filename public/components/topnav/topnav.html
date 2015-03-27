@@ -4,8 +4,8 @@
             <md-button ng-click="topnav.openSidenav()" class="md-primary md-fab" aria-label="toggle sidenav"><i class="mdi fa-lg mdi-menu"></i>
             </md-button>
         </div>
-        <div flex layout="row" layout-align="end center" data-ng-controller="AuthenticationController">
-			<md-button style="margin-right:10px" ui-sref="profile" class="md-primary md-fab"
+        <div flex layout="row" layout-align="end center">
+			<md-button style="margin-right:10px" ui-sref="profile" class="md-primary md-fab alt-sm"
 					   ng-if="topnav.auth.user" aria-label="My profile">
 				<i class="mdi fa-lg mdi-account"></i>
 				<md-tooltip md-visible="demo.showTooltip">My profile - {{topnav.auth.user.email}}</md-tooltip>

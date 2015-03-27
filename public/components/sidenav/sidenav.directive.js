@@ -6,7 +6,7 @@
   .directive('sidenav', function() {
     return {
       restrtict: 'E',
-      templateUrl: 'components/sidenav/sidenav.html',
+      templateUrl: 'components/sidenav/sidenav.view.html',
       controller: 'SidenavController',
       controllerAs: 'sidenav',
       bindToController: true,
